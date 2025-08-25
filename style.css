@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pt1 {
+    background-image: url(imagens/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1980px;
+    height: 1080px;
+}
+
+.pt2 {
+    background-image: url(imagens/2.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.espiar {
+    margin-left: 35%;
+    margin-top: 30%;
+    width: 450px;
+    height: 225px;
+}
