@@ -1,0 +1,50 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+body{
+    background-image: url('funco.jpg');
+    margin-top: 100px;
+}
+
+header{
+    background-image: url('nuvem.png');
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    font-size: 35px;
+    color:rgb(9, 16, 95);
+
+    position: fixed;
+    top: 0;         
+    left: 0;        
+    width: 100%;    
+    z-index: 1000;  
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#titulo{
+    font-family: "Pacifico", cursive;
+}
+
+.teste{
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap: 30px;
+    margin-top: 50px;
+    width: 1000px;    
+}
+
+#poema{
+    justify-content:space-around;
+    width: 300px;
+    height: 500px;
+    background-color: rgba(31, 70, 138, 0.772);
+}
