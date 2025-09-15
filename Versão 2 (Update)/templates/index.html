@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depósito de Poemas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <section class="main"></section>
+
+  <section class="pt2">
+    <div class="text">
+      <p>
+        “Um refúgio poético dedicado à exibição de pequenos poemas e poesias, 
+        onde cada palavra é uma centelha de emoção, cada verso um sopro da alma, 
+        e cada leitura um convite para se perder entre mundos criados pela simplicidade da arte.”
+      </p>
+    </div>
+
+    <div class="clouds">
+      <a href="{{ url_for('poemas') }}" class="btn-espiar">Espiar 🔍︎</a>
+
+      <img src="{{ url_for('static', filename='images/3.png') }}" alt="Nuvem esquerda" class="cloud cloud-left">
+      <img src="{{ url_for('static', filename='images/3.png') }}" alt="Nuvem direita" class="cloud cloud-right">
+    </div>
+  </section>
+
+</body>
+</html>

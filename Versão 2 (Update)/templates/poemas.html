@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/poemas.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Poesia de Cada Dia</title>
+</head>
+<body>
+    <header>
+        <center>
+            <h1 id="titulo">Inspire-se</h1>
+        </center>
+    </header>
+    <main>
+        <div class="carousel">
+
+            <!-- Inputs do Carrossel -->
+            {% for poema in poemas %}
+                <input type="radio" name="slider" id="slide-{{ loop.index }}" {% if loop.first %}checked{% endif %}>
+            {% endfor %}
+
+            <!-- Títulos Dinâmicos -->
+            {% for poema in poemas %}
+                <p class="tit-slide tit-{{ loop.index }}">{{ poema.titulo }}</p>
+            {% endfor %}
+
+            <!-- Slides com os Poemas -->
+            <div class="slides">
+                {% for poema in poemas %}
+                    <div class="poema">
+                        {% for linha in poema.texto.split('\n') %}
+                            <p>{{ linha }}</p>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Navegação Manual -->
+            <div class="navigation-manual">
+                {% for poema in poemas %}
+                    <label for="slide-{{ loop.index }}" class="manual-btn"></label>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>

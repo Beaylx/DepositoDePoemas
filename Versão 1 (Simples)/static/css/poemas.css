@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../images/fundo.png');
+    background-attachment: fixed;
+}
+
+@font-face {
+    font-family: "Cute";
+    src: url('../fonts/CUTE FROG.ttf') format("truetype");
+}
+
+header {
+    background-image: url('../images/nuvem.png');
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 650px;
+    font-size: 35px;
+    color: rgb(35, 42, 114);
+    position: relative;
+    padding-top: 40px;
+}
+
+
+#titulo {
+    font-family: "Pacifico", cursive;
+}
+
+.sol {
+    height: auto;
+    width: 400px;
+}
+
+.carousel input[type="radio"] {
+    display: none;
+}
+
+.carousel {
+    width: 500px;
+    height: 700px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin: 50px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25),
+                0 12px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(51, 91, 160, 0.9);
+}
+
+.tit {
+    color: #fff;
+    font-size: 45px;
+    font-family: "Cute";
+    text-align: center;
+    margin: 20px 0 30px 0;
+    display: block;
+    letter-spacing: 2px;
+}
+
+.slides {
+    display: flex;
+    width: 600%;
+    height: 100%;
+    transition: all 0.6s ease;
+}
+
+.poema {
+    width: calc(100% / 6);
+    height: 100%;
+    background-color: rgba(51, 91, 160, 0.772);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.poema p {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.manual-btn {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.manual-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#slide-1:checked ~ .slides { margin-left: 0; }
+#slide-2:checked ~ .slides { margin-left: -100%; }
+#slide-3:checked ~ .slides { margin-left: -200%; }
+#slide-4:checked ~ .slides { margin-left: -300%; }
+#slide-5:checked ~ .slides { margin-left: -400%; }
+#slide-6:checked ~ .slides { margin-left: -500%; }
+
+#slide-1:checked ~ .navigation-manual .manual-btn:nth-child(1),
+#slide-2:checked ~ .navigation-manual .manual-btn:nth-child(2),
+#slide-3:checked ~ .navigation-manual .manual-btn:nth-child(3),
+#slide-4:checked ~ .navigation-manual .manual-btn:nth-child(4),
+#slide-5:checked ~ .navigation-manual .manual-btn:nth-child(5),
+#slide-6:checked ~ .navigation-manual .manual-btn:nth-child(6) {
+    background: white;
+}

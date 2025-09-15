@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/poemas.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <title>Poesia de Cada Dia</title>
+</head>
+<body>
+    <header>
+        <center>
+            <h1 id="titulo">Inspire-se</h1>
+        </center>
+    </header>
+    <main>
+        <div class="carousel">
+            <p class="tit">Título</p>
+
+            <input type="radio" name="slider" id="slide-1" checked>
+            <input type="radio" name="slider" id="slide-2">
+            <input type="radio" name="slider" id="slide-3">
+            <input type="radio" name="slider" id="slide-4">
+            <input type="radio" name="slider" id="slide-5">
+            <input type="radio" name="slider" id="slide-6">
+
+            <div class="slides">
+                <div class="poema"><p>Poema 1</p></div>
+                <div class="poema"><p>Poema 2</p></div>
+                <div class="poema"><p>Poema 3</p></div>
+                <div class="poema"><p>Poema 4</p></div>
+                <div class="poema"><p>Poema 5</p></div>
+                <div class="poema"><p>Poema 6</p></div>
+            </div>
+
+            <div class="navigation-auto">
+                <label for="slide-1" class="auto-btn1"></label>
+                <label for="slide-2" class="auto-btn2"></label>
+                <label for="slide-3" class="auto-btn3"></label>
+                <label for="slide-4" class="auto-btn4"></label>
+                <label for="slide-5" class="auto-btn5"></label>
+                <label for="slide-6" class="auto-btn6"></label>
+            </div>
+
+            <div class="navigation-manual">
+                <label for="slide-1" class="manual-btn"></label>
+                <label for="slide-2" class="manual-btn"></label>
+                <label for="slide-3" class="manual-btn"></label>
+                <label for="slide-4" class="manual-btn"></label>
+                <label for="slide-5" class="manual-btn"></label>
+                <label for="slide-6" class="manual-btn"></label>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

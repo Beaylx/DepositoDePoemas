@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depósito de Poemas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/poemas.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    #index-section, #poemas-section {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    #poemas-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 10;
+    }
+
+    #poemas-section.show {
+      display: block;
+      opacity: 1;
+    }
+
+    #index-section.hide {
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 5;
+    }
+
+    #index-section .main {
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #index-section .pt2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      min-height: 100vh;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <section class="main" id="index-section"></section>
+
+  <section class="pt2" id="pt2">
+    <div class="text">
+      <p>
+        “Um refúgio poético dedicado à exibição de pequenos poemas e poesias, 
+        onde cada palavra é uma centelha de emoção, cada verso um sopro da alma, 
+        e cada leitura um convite para se perder entre mundos criados pela simplicidade da arte.”
+      </p>
+    </div>
+
+    <div class="clouds">
+      <a id="btn-espiar" class="btn-espiar">Espiar 🔍︎</a>
+
+      <img src="{{ url_for('static', filename='images/3.png') }}" alt="Nuvem esquerda" class="cloud cloud-left">
+      <img src="{{ url_for('static', filename='images/3.png') }}" alt="Nuvem direita" class="cloud cloud-right">
+    </div>
+  </section>
+
+
+  <section id="poemas-section">
+    <header>
+      <center><h1 id="titulo">Inspire-se</h1></center>
+    </header>
+    <main>
+      <div class="carousel">
+        {% for poema in poemas %}
+          <input type="radio" name="slider" id="slide-{{ loop.index }}" {% if loop.first %}checked{% endif %}>
+        {% endfor %}
+
+        {% for poema in poemas %}
+          <p class="tit-slide tit-{{ loop.index }}">{{ poema.titulo }}</p>
+        {% endfor %}
+
+        <div class="slides">
+          {% for poema in poemas %}
+            <div class="poema">
+              {% for linha in poema.texto.split('\n') %}
+                <p>{{ linha }}</p>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="navigation-manual">
+          {% for poema in poemas %}
+            <label for="slide-{{ loop.index }}" class="manual-btn"></label>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script>
+    const btnEspiar = document.getElementById('btn-espiar');
+    const indexSection = document.getElementById('index-section');
+    const pt2Section = document.querySelector('.pt2');
+    const poemasSection = document.getElementById('poemas-section');
+
+    btnEspiar.addEventListener('click', () => {
+      indexSection.classList.add('hide');
+      pt2Section.classList.add('hide');
+
+      setTimeout(() => {
+        indexSection.style.display = 'none';
+        pt2Section.style.display = 'none';
+        poemasSection.style.display = 'block';
+      setTimeout(() => {
+        poemasSection.classList.add('show');
+      }, 50);
+    }, 1000); 
+  });
+  </script>
+
+</body>
+</html>

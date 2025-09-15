@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../images/fundo.png');
+    background-attachment: fixed;
+}
+
+@font-face {
+    font-family: "Cute";
+    src: url('../fonts/CUTE FROG.ttf') format("truetype");
+}
+
+header {
+    background-image: url('../images/nuvem.png');
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 650px;
+    font-size: 35px;
+    color: rgb(35, 42, 114);
+    position: relative;
+    padding-top: 40px;
+}
+
+#titulo {
+    font-family: "Pacifico", cursive;
+}
+
+.carousel input[type="radio"] {
+    display: none;
+}
+
+.carousel {
+    width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25),
+                0 12px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(147, 187, 240, 0.9);
+}
+
+.tit-slide {
+    display: none;
+    color: rgb(35, 42, 114);
+    font-size: 45px;
+    font-family: "Cute";
+    text-align: center;
+    margin: 20px 0 30px 0;
+    letter-spacing: 2px;
+}
+
+#slide-1:checked ~ .tit-1,
+#slide-2:checked ~ .tit-2,
+#slide-3:checked ~ .tit-3,
+#slide-4:checked ~ .tit-4,
+#slide-5:checked ~ .tit-5,
+#slide-6:checked ~ .tit-6 {
+    display: block;
+}
+
+.slides {
+    display: flex;
+    width: calc(600px * 6);
+    transition: all 0.6s ease;
+}
+
+.poema {
+    width: 600px;
+    height: 300px;
+    background-color: rgba(33, 66, 122, 0.772);
+    padding: 50px;
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+}
+
+.poema p {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.manual-btn {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.manual-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#slide-1:checked ~ .slides { margin-left: 0; }
+#slide-2:checked ~ .slides { margin-left: -600px; }
+#slide-3:checked ~ .slides { margin-left: -1200px; }
+#slide-4:checked ~ .slides { margin-left: -1800px; }
+#slide-5:checked ~ .slides { margin-left: -2400px; }
+#slide-6:checked ~ .slides { margin-left: -3000px; }
+
+#slide-1:checked ~ .navigation-manual .manual-btn:nth-child(1),
+#slide-2:checked ~ .navigation-manual .manual-btn:nth-child(2),
+#slide-3:checked ~ .navigation-manual .manual-btn:nth-child(3),
+#slide-4:checked ~ .navigation-manual .manual-btn:nth-child(4),
+#slide-5:checked ~ .navigation-manual .manual-btn:nth-child(5),
+#slide-6:checked ~ .navigation-manual .manual-btn:nth-child(6) {
+    background: white;
+}
